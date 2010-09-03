@@ -1,0 +1,10 @@
+<html>
+<body>
+    <h1>{{ url("tables.browse") }}</h1>
+    <ul>
+    {% for i in list %}
+        <li><a href="#">{{ i }}</a></li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

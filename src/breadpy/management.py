@@ -6,6 +6,7 @@ def execute_from_commandline():
     parser = OptionParser()
     parser.add_option("-b", "--bind", dest="bind", default="127.0.0.1", help="network interface host to bind")
     parser.add_option("-p", "--port", dest="port", default=8887, help="port to serve requests")
+    parser.add_option("--debug", dest="debug", action="store_true", help="enable Debug mode")
     parser.add_option("--fastcgi", dest="fastcgi", action="store_true", help="serve using FastCGI ")
     (options, args) = parser.parse_args()
     server=bottle.WSGIRefServer
@@ -13,6 +14,8 @@ def execute_from_commandline():
         #print "%s" % options
         if options.fastcgi:
             server=bottle.FlupFCGIServer
+        if options.debug:
+            bottle.debug(True)
     bottle.run(app=breadpy.app, server=server, host=options.bind, port=options.port)
     
 

@@ -1,4 +1,5 @@
 *.sw[po]
+*.vim
 *.pyc
 *.egg
 *.egg-info

@@ -10,6 +10,7 @@ setup(
         'sqlalchemy',
         'bottle',
         'WTForms',
+        'jinja2',
         ],
     )
     
