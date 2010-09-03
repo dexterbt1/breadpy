@@ -1,0 +1,10 @@
+*.sw[po]
+*.pyc
+*.egg
+*.egg-info
+bin
+parts
+eggs
+develop-eggs
+downloads
+.installed.cfg
