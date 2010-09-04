@@ -1,9 +1,9 @@
 <html>
 <body>
-    <h1>{{ url("tables.browse") }}</h1>
+    <h1>{{ url("tables_browse") }}</h1>
     <ul>
     {% for i in list %}
-        <li><a href="#">{{ i }}</a></li>
+        <li><a href="{{ url("rows_browse", i) }}">{{ i }}</a></li>
     {% endfor %}
     </ul>
 </body>
