@@ -1,6 +1,6 @@
 <html>
 <body>
-    <h1>{{ url("tables_browse") }}</h1>
+    <h1>root{{ url("tables_browse") }}</h1>
     <ul>
     {% for i in list %}
         <li><a href="{{ url("rows_browse", i) }}">{{ i }}</a></li>

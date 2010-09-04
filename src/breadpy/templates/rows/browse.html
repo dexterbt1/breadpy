@@ -1,0 +1,23 @@
+<html>
+<body>
+    <h1>root{{ url("rows_browse", table.name) }}</h1>
+    <table border="1">
+        <thead>
+            <tr>
+            {% for col in table.columns %}
+                <th>{{ col.name }}</th>
+            {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+        {% for row in rows %}
+            <tr>
+            {% for c in row %}
+                <td>{{ c }} </td>
+            {% endfor %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
