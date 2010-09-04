@@ -1,11 +1,18 @@
 <html>
+<head>
+<style>
+    .display-schema {
+        color: #900;
+    }
+</style>
+</head>
 <body>
     <h1>root{{ url("rows_browse", table.name) }}</h1>
     <table border="1">
         <thead>
             <tr>
-            {% for col in table.columns %}
-                <th>{{ col.name }}</th>
+            {% for col in columns %}
+                <th {% if col.breadpy_fk %}class="display-schema"{% endif %}>{{ col.name }}</th>
             {% endfor %}
             </tr>
         </thead>
@@ -19,5 +26,6 @@
         {% endfor %}
         </tbody>
     </table>
+    <p>{{ sql }}</p>
 </body>
 </html>
