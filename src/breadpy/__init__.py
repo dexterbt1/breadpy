@@ -1,3 +1,13 @@
+import breadpy.settings
+import yaml
+
+def load_settings(filename, conf):
+    c = yaml.load(file(filename))
+    for k in c.keys():
+        setattr(conf, k, c[k])
+
+load_settings("settings.yml", breadpy.settings)
+
 from bottle import Bottle
 import breadpy.routing
 import breadpy.urls

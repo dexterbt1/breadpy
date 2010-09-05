@@ -1,0 +1,26 @@
+---
+BASE_URL: ""
+
+DATABASE_ENGINE_URL: 'mysql://root:@localhost/spree?charset=utf8'
+#DATABASE_ENGINE_URL: 'mysql://viral:viralviral@localhost/viral'
+
+TEMPLATE_APP_NAME: "breadpy"
+TEMPLATE_DIR_NAME: "templates"
+
+DISPLAY_FK:
+    store_store:
+        user_id: 
+            - auth_user.username
+            - auth_user.email
+    store_order:
+        buyer_user_id:
+            - auth_user.username
+            - auth_user.email
+    store_product:
+        store_id:
+            - auth_user.username
+            - store_store.title
+    store_productvariant:
+        product_id:
+            - store_product.title
+
